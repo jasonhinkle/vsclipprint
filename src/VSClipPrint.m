@@ -1,9 +1,9 @@
 //
 //  VSClipPrint.m
-//  Master Tour
+//  Utility for either sending text to the clipboard or sending it to an AirPrint printer
 //
-//  Created by Jason on 11/14/14.
-//  Copyright (c) 2014 Eventric. All rights reserved.
+//  Created by Jason Hinkle on 11/14/14.
+//  License: LGPL
 //
 
 #import "VSClipPrint.h"
