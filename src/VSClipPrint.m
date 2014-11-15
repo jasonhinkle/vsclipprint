@@ -10,6 +10,17 @@
 
 @implementation VSClipPrint
 
+static VSClipPrint *instance;
+
+// show an action sheet prompting the user to copy to clipboard or print.
++ (void) showInView:(UIView *)view withTitle: (NSString *)title forTextContent:(NSString *)content
+{
+	if (!instance) instance = [[VSClipPrint alloc] init];
+	
+	[instance showInView:view withTitle:title forTextContent:content];
+	
+}
+
 // show an action sheet prompting the user to copy to clipboard or print.  NOTE: the caller
 // must persist the reference to VSClipPrint, otherwise the VSClipPrint will be garbage collected
 // before the action sheet delegate has fired
@@ -48,6 +59,9 @@
 	pasteboard.string = textContent;
 	
 	[self showAlertWithMessage:@"Copied to Clipboard"];
+	
+	textContent = nil;
+
 }
 
 -(void)doSendToAirPrint
@@ -80,6 +94,8 @@
 	};
 	
 	[pic presentAnimated:YES completionHandler:completionHandler];
+	
+	textContent = nil;
 
 }
 

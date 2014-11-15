@@ -13,6 +13,8 @@
 	NSString *textContent;
 }
 
++ (void) showInView:(UIView *)view withTitle: (NSString *)title forTextContent:(NSString *)content;
+
 - (void) showInView:(UIView *)view withTitle: (NSString *)title forTextContent:(NSString *)content;
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex;
 
